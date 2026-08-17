@@ -81,4 +81,4 @@ Chaque release est signée :
 | [Windows-App-Impera](https://github.com/Impera-App/Windows-App-Impera) | Code source de l'app desktop publiée ici |
 | [Windows-App-ImperaGuard](https://github.com/Impera-App/Windows-App-ImperaGuard) | Service strict mode (embarqué dans l'installer) |
 | [Website-Impera](https://github.com/Impera-App/Website-Impera) | Page de téléchargement ; pointe vers la latest release de ce repo |
-| [Android-App-Impera](https://github.com/Impera-App/Android-App-Impera) | App compagnon mobile (channel séparé, géré par EAS) |
+| [Mobile-App-Impera](https://github.com/Impera-App/Mobile-App-Impera) | App mobile Android + iOS (Expo / React Native) (channel séparé, géré par EAS) |
