@@ -17,10 +17,15 @@ L'app desktop est dans [Windows-App-Impera](https://github.com/Impera-App/Window
 Chaque release suit la convention `electron-updater` :
 
 ```
-Impera-Setup-1.2.3.exe         ← Installer NSIS signé
-Impera-Setup-1.2.3.exe.blockmap ← Delta block-map (MAJ incrémentale)
+Impera.Setup.1.2.3.exe          ← Installer NSIS
+Impera.Setup.1.2.3.exe.blockmap ← Delta block-map (MAJ incrémentale)
 latest.yml                      ← Métadonnée (version, sha512, taille)
 ```
+
+Des **points**, pas des tirets : le nom vient de
+`package.json#build.nsis.artifactName`, qui vaut
+`${productName}.Setup.${version}.exe`. Ce README annonçait des tirets, ce
+qu'aucune release n'a jamais porté.
 
 Tag : `v<version>` (ex : `v1.2.3`)
 
@@ -34,9 +39,17 @@ Tout est piloté depuis [Windows-App-Impera](https://github.com/Impera-App/Windo
 
 ```bash
 # Dans Windows-App-Impera
-npm version patch    # ou minor/major — bump package.json + tag git
-npm run dist         # build + electron-builder + publish vers Impera-Releases
+npm version patch          # ou minor/major — bump package.json + tag git
+git push --follow-tags     # le tag v* déclenche .github/workflows/release.yml
 ```
+
+Le workflow tourne sur un runner `windows-latest` — obligatoire, la cible NSIS
+et ImperaGuard (`net8.0-windows`) ne se construisent pas ailleurs — et publie
+ici. Il se lance aussi à la main : Actions → **Release Windows** → *Run
+workflow*, qui republie la version courante de `package.json`.
+
+Un `npm run dist` en local reste possible sur une machine Windows équipée du
+SDK .NET 8 ; c'était le seul chemin jusqu'ici.
 
 Le `publish` est configuré dans `package.json#build.publish` :
 
@@ -44,12 +57,13 @@ Le `publish` est configuré dans `package.json#build.publish` :
 {
   "provider": "github",
   "owner": "Impera-App",
-  "repo": "Windows-Impera-Releases",
-  "releaseType": "release"
+  "repo": "Windows-Impera-Releases"
 }
 ```
 
-Avec un `GH_TOKEN` valide, `electron-builder` :
+Avec un `GH_TOKEN` valide — côté CI le secret `RELEASES_TOKEN`, car le
+`GITHUB_TOKEN` d'Actions n'a de droits que sur le dépôt source —
+`electron-builder` :
 1. Crée une nouvelle GitHub Release ici
 2. Upload les artefacts (installer + blockmap + latest.yml)
 3. Marque la release comme "latest"
@@ -66,12 +80,18 @@ Pour publier une release stable :
 - Tag : `v1.2.3`
 - Décocher "Pre-release"
 
-`electron-updater` peut être configuré pour suivre un canal (`stable` vs `beta`) — voir `app.json#updater.channel` côté app desktop.
+`electron-updater` sait suivre un canal (`stable` vs `beta`), mais **rien
+n'est configuré en ce sens aujourd'hui** : l'app desktop n'a ni `app.json` ni
+réglage de canal. Une pre-release publiée ici ne sera donc pas proposée
+automatiquement — elle se télécharge à la main.
 
 ## Vérification d'intégrité
 
-Chaque release est signée :
-- **Installer NSIS** : signé avec le certificat EV Code Signing d'Impera (vérifiable via `signtool verify`)
+- **Installer NSIS** : signé avec le certificat EV Code Signing d'Impera
+  (vérifiable via `signtool verify`) **lorsqu'un certificat est fourni au
+  build**. Un certificat EV vit le plus souvent sur un jeton matériel, qu'un
+  runner GitHub ne peut pas présenter : une release produite par la CI sans
+  `CSC_LINK` n'est pas signée, et SmartScreen l'annonce comme éditeur inconnu.
 - **`latest.yml`** : contient le `sha512` de l'installer ; `electron-updater` rejette tout binaire qui ne match pas
 
 ## Repos liés
