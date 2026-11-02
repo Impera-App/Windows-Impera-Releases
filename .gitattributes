@@ -1,0 +1,31 @@
+# Fins de ligne communes à tous les dépôts : LF dans l'index ET à l'extraction,
+# y compris sous Windows — un fichier relu par un test ou un script ne doit pas
+# changer de forme selon la machine qui l'extrait. Fichier identique partout.
+* text=auto eol=lf
+
+# Les analyseurs Windows peuvent échouer sur un script en LF.
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+*.ps1  text eol=crlf
+*.nsh  text eol=crlf
+
+# Binaires : jamais de conversion, jamais de diff texte.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.ico  binary
+*.icns binary
+*.pdf  binary
+*.ttf  binary
+*.otf  binary
+*.woff binary
+*.woff2 binary
+*.zip  binary
+*.jar  binary
+*.exe  binary
+*.dll  binary
+
+# Fichiers générés : repliés dans les diffs de pull request.
+package-lock.json linguist-generated=true
