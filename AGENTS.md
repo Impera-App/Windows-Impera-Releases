@@ -42,9 +42,33 @@ absente se lit comme un oubli.
 10. `## Dépôts liés` — le tableau commun, identique partout ;
 11. `## Licence`.
 
-**Langue** : le code, les commentaires, la documentation et les messages de
-commit sont en français ; les identifiants restent sans accent. Un commentaire
-dit **pourquoi**, pas ce que fait la ligne.
+**Langue** : les **identifiants sont en anglais** — fonctions, variables,
+fichiers, composants, classes CSS, clés i18n, objets SQL, adresses techniques —
+et le **texte visible est en français**, posé par-dessus (i18n). Les noms de
+pages des sites restent en français (`confidentialite.html`). Commentaires,
+documentation et messages de commit sont en français ; un commentaire dit
+**pourquoi**, pas ce que fait la ligne. Le code existant écrit en français se
+convertit au fil des modifications, jamais d'un bloc : un renommage massif
+casse plus qu'il ne range.
+
+**Nommage : tout ce qui appartient à un projet porte son nom**, toujours de la
+même façon.
+
+| Quoi | Règle | Exemple |
+|---|---|---|
+| Adresse | `<projet>.lorderis.dev` | `foody.lorderis.dev`, `account.lorderis.dev` |
+| Schéma Supabase | `<projet>` | `impera`, `healthchecks` |
+| Edge Function | `<projet>-<action>` | `impera-stripe-webhook` |
+| Secret | `<PROJET>_…` | `IMPERA_STRIPE_SECRET_KEY` |
+| Dossier distant | `website-<projet>/` | `website-foody/` |
+
+**Un seul compte : le compte Lorderis.** Toute app qui a des comptes utilise
+celui du projet Supabase commun, dont le dépôt de référence est
+[Account-LordEris](https://github.com/LordEris/Account-LordEris) : même
+e-mail, même mot de passe, même compte Google partout, gérés sur
+`account.lorderis.dev`. Une app ne crée jamais son propre système de comptes.
+Les textes de connexion, d'inscription et de suppression, et la ligne « Un
+projet Lorderis » en bas de page sont communs, au mot près.
 
 **Livrer** : une branche, une pull request, jamais de poussée directe sur la
 branche par défaut. Avant d'ajouter à l'index, relire `git status` : un
@@ -71,13 +95,16 @@ branche par défaut. Avant d'ajouter à l'index, relire `git status` : un
   `frame-ancestors 'none'`, `nosniff`, Referrer-Policy, Permissions-Policy,
   redirection HTTPS, fichiers cachés et internes refusés. Un écart se justifie
   en commentaire.
+- **Données de santé** : elles ne quittent jamais l'appareil, chiffrées dans
+  un coffre (Keystore, Keychain, `safeStorage`). Les autres apps peuvent en
+  envoyer vers HealthChecks ; HealthChecks n'envoie rien ailleurs, à
+  personne, et n'appelle aucun service d'IA.
 - **Projet Supabase commun** : une base pour toutes les apps, **un schéma par
   app**. RLS sur chaque table ; toute fonction `SECURITY DEFINER` fixe son
   `search_path`, vérifie `auth.uid()` et retire `execute` à `public`/`anon`
   quand elle n'est pas publique. La clé `service_role` ne quitte jamais une
-  Edge Function. Le SQL commun vit dans
-  `Mobile-App-Foody/supabase/projet-commun/` ; une copie ailleurs porte une
-  garde qui refuse de s'exécuter sur le projet commun.
+  Edge Function. Le SQL du projet commun vit dans Account-LordEris ; une
+  copie ailleurs porte une garde qui refuse de s'exécuter sur le projet commun.
 - **Applications** : sessions dans le stockage sécurisé du système (Keychain,
   Keystore, SecureStore), jamais en clair ; une entrée venant d'un fichier, d'un
   lien ou d'un autre processus est hostile ; un processus élevé ne lit rien

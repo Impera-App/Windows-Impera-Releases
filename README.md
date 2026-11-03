@@ -200,7 +200,7 @@ Le même tableau figure dans chaque dépôt. Un dépôt qui s'ajoute s'ajoute pa
 
 | Famille | Dépôt | Rôle |
 |---|---|---|
-| Foody | [Mobile-App-Foody](https://github.com/App-Foody/Mobile-App-Foody) | Application de suivi alimentaire (Expo) ; tient le SQL du projet Supabase commun |
+| Foody | [Mobile-App-Foody](https://github.com/App-Foody/Mobile-App-Foody) | Application de suivi alimentaire (Expo), schéma Supabase `foody` |
 | Foody | [Website-Foody](https://github.com/App-Foody/Website-Foody) | Site public, compte, réinitialisation, suppression de compte |
 | Foody | [Website-FoodySupport](https://github.com/App-Foody/Website-FoodySupport) | Console des agents du support |
 | Impera | [Mobile-App-Impera](https://github.com/Impera-App/Mobile-App-Impera) | Application de concentration, Android (Expo) |
@@ -209,13 +209,14 @@ Le même tableau figure dans chaque dépôt. Un dépôt qui s'ajoute s'ajoute pa
 | Impera | [Website-Impera](https://github.com/Impera-App/Website-Impera) | Site public, compte, paiement ; Edge Functions Stripe |
 | Impera | [Website-ImperaSupport](https://github.com/Impera-App/Website-ImperaSupport) | Console des agents du support |
 | Impera | [Windows-Impera-Releases](https://github.com/Impera-App/Windows-Impera-Releases) | Canal public de mise à jour de l'app Windows |
-| BeeFluid | [Windows-Beefluid](https://github.com/BeeFluid/Windows-Beefluid) | Application terrain (Expo) et poste de bureau d'études (Tauri) |
+| BeeFluid | [Windows-Beefluid](https://github.com/BeeFluid/Windows-Beefluid) | Application terrain (Expo) et poste de bureau d'études (Tauri), schéma Supabase `beefluid` |
 | BeeFluid | [Windows-Beefluid-releases](https://github.com/BeeFluid/Windows-Beefluid-releases) | Canal public de publication du poste et de l'APK |
 | BeeFluid | [Mobile-Beefluid](https://github.com/BeeFluid/Mobile-Beefluid) | Vide : l'application mobile vit dans Windows-Beefluid |
-| Lorderis | [capsa](https://github.com/LordEris/capsa) | Gestion de patrimoine : web, API Node, schéma Supabase `capsa` |
-| Lorderis | [HealthChecks](https://github.com/LordEris/HealthChecks) | Alfred, assistant personnel : web, Electron, Android |
-| Lorderis | [Lineup](https://github.com/LordEris/Lineup) | Playlists de groupe (Next.js, Appwrite) |
-| Lorderis | [Fleetly](https://github.com/LordEris/Fleetly) | Gestion de garage et de flotte (Expo) |
+| Lorderis | [Account-LordEris](https://github.com/LordEris/Account-LordEris) | Compte Lorderis unique : SQL du projet Supabase commun, account.lorderis.dev, code client de référence |
+| Lorderis | [Patrimo](https://github.com/LordEris/capsa) | Gestion de patrimoine (ex-Capsa) : web, schéma Supabase `patrimo` |
+| Lorderis | [HealthChecks](https://github.com/LordEris/HealthChecks) | Santé et suivi personnel (ex-Alfred), données chiffrées sur l'appareil : web, Electron, Android |
+| Lorderis | [Lineup](https://github.com/LordEris/Lineup) | Playlists de groupe (Next.js), schéma Supabase `lineup` |
+| Lorderis | [Fleetly](https://github.com/LordEris/Fleetly) | Gestion de garage et de flotte (Expo), schéma Supabase `fleetly` |
 | Lorderis | [Website-Kikiladi](https://github.com/LordEris/Website-Kikiladi) | Jeu « Kikiladi ? » (statique + PHP) |
 | Lorderis | [Website-LordEris](https://github.com/LordEris/Website-LordEris) | Site vitrine Lorderis et pages des projets |
 

@@ -1,8 +1,8 @@
 # Sécurité — Impera (canal de publication Windows)
 
-Ce fichier est commun à tous les dépôts (Foody, Impera, BeeFluid, Capsa,
-Alfred, Lineup, Fleetly, Kikiladi) et tenu à l'identique ; seule la section
-« Propre à ce dépôt » change.
+Ce fichier est commun à tous les dépôts (Foody, Impera, Patrimo,
+HealthChecks, Lineup, Fleetly, BeeFluid, Kikiladi et le site Lorderis) et tenu
+à l'identique ; seule la section « Propre à ce dépôt » change.
 
 ## Signaler une faille
 
@@ -31,7 +31,9 @@ dire ce qui est atteint, comment le reproduire, et ce qu'un attaquant y gagne.
   identifiants à un serveur non vérifié.
 - **Les droits se tiennent côté serveur.** RLS et fonctions `SECURITY
   DEFINER` (avec `search_path` fixé) pour Supabase, règles de document pour
-  Appwrite. Ce que l'interface cache n'est pas protégé pour autant.
+  Appwrite. Ce que l'interface cache n'est pas protégé pour autant. Le SQL du
+  projet Supabase commun vit dans Account-LordEris ; une copie ailleurs porte
+  une garde qui refuse de s'exécuter sur le projet commun.
 - **Un échec ne se tait pas, une donnée absente n'est pas favorable** : ce
   sont les règles de chaque dépôt, et elles valent pour la sécurité aussi.
 
