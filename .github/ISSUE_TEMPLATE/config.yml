@@ -1,0 +1,6 @@
+# Une faille ne s'ouvre pas en issue publique : voir SECURITY.md.
+blank_issues_enabled: false
+contact_links:
+  - name: Signaler une faille de sécurité
+    url: https://github.com/Impera-App/Windows-Impera-Releases/security/advisories/new
+    about: Signalement privé — ne pas ouvrir d'issue publique.

@@ -1,0 +1,17 @@
+# ── Secrets et clés : jamais dans le dépôt ─────────────────────────────────
+# Bloc commun à tous les dépôts Lorderis / Foody / Impera / BeeFluid, tenu à
+# l’identique partout. Un `.env` rempli ou une clé de signature committés une
+# fois restent dans l’historique même après suppression : il faut alors
+# changer le secret, pas seulement retirer le fichier.
+.env
+.env.*
+!.env*.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+!debug.keystore
+*.mobileprovision
+*.p8
