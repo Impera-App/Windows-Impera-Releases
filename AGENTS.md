@@ -98,7 +98,9 @@ branche par défaut. Avant d'ajouter à l'index, relire `git status` : un
 - **Données de santé** : elles ne quittent jamais l'appareil, chiffrées dans
   un coffre (Keystore, Keychain, `safeStorage`). Les autres apps peuvent en
   envoyer vers HealthChecks ; HealthChecks n'envoie rien ailleurs, à
-  personne, et n'appelle aucun service d'IA.
+  personne — seul un rapport de plantage anonyme (type d'erreur et pile
+  d'appels, sans aucune donnée) part chez Sentry, région UE — et n'appelle
+  aucun service d'IA.
 - **Projet Supabase commun** : une base pour toutes les apps, **un schéma par
   app**. RLS sur chaque table ; toute fonction `SECURITY DEFINER` fixe son
   `search_path`, vérifie `auth.uid()` et retire `execute` à `public`/`anon`
