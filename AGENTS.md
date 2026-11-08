@@ -95,12 +95,14 @@ branche par défaut. Avant d'ajouter à l'index, relire `git status` : un
   `frame-ancestors 'none'`, `nosniff`, Referrer-Policy, Permissions-Policy,
   redirection HTTPS, fichiers cachés et internes refusés. Un écart se justifie
   en commentaire.
-- **Données de santé** : elles ne quittent jamais l'appareil, chiffrées dans
+- **Données de santé** : elles restent sur l'appareil, chiffrées dans
   un coffre (Keystore, Keychain, `safeStorage`). Les autres apps peuvent en
-  envoyer vers HealthChecks ; HealthChecks n'envoie rien ailleurs, à
-  personne — seul un rapport de plantage anonyme (type d'erreur et pile
-  d'appels, sans aucune donnée) part chez Sentry, région UE — et n'appelle
-  aucun service d'IA.
+  envoyer vers HealthChecks ; HealthChecks n'envoie rien ailleurs de
+  lui-même — seul un rapport de plantage anonyme (type d'erreur et pile
+  d'appels, sans aucune donnée) part chez Sentry, région UE. Son assistant
+  (Claude, d'Anthropic, États-Unis) est proposé mais n'envoie rien sans
+  l'accord explicite de la personne, puis seulement ce qu'elle a vu avant
+  chaque question, par une Edge Function qui tient la clé et ne garde rien.
 - **Projet Supabase commun** : une base pour toutes les apps, **un schéma par
   app**. RLS sur chaque table ; toute fonction `SECURITY DEFINER` fixe son
   `search_path`, vérifie `auth.uid()` et retire `execute` à `public`/`anon`
