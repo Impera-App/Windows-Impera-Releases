@@ -205,20 +205,26 @@ Le même tableau figure dans chaque dépôt. Un dépôt qui s'ajoute s'ajoute pa
 | Foody | [Website-FoodySupport](https://github.com/App-Foody/Website-FoodySupport) | Console des agents du support |
 | Impera | [Mobile-App-Impera](https://github.com/Impera-App/Mobile-App-Impera) | Application de concentration, Android (Expo) |
 | Impera | [Windows-App-Impera](https://github.com/Impera-App/Windows-App-Impera) | Application Windows (Electron) et service ImperaGuard |
-| Impera | [MacOS-App-Impera](https://github.com/Impera-App/MacOS-App-Impera) | Application macOS (Swift) et filtre réseau |
-| Impera | [Website-Impera](https://github.com/Impera-App/Website-Impera) | Site public, compte, paiement ; Edge Functions Stripe |
+| Impera | [Website-Impera](https://github.com/Impera-App/Website-Impera) | Site public, compte et pages légales |
 | Impera | [Website-ImperaSupport](https://github.com/Impera-App/Website-ImperaSupport) | Console des agents du support |
 | Impera | [Windows-Impera-Releases](https://github.com/Impera-App/Windows-Impera-Releases) | Canal public de mise à jour de l'app Windows |
-| BeeFluid | [Windows-Beefluid](https://github.com/BeeFluid/Windows-Beefluid) | Application terrain (Expo) et poste de bureau d'études (Tauri), schéma Supabase `beefluid` |
-| BeeFluid | [Windows-Beefluid-releases](https://github.com/BeeFluid/Windows-Beefluid-releases) | Canal public de publication du poste et de l'APK |
-| BeeFluid | [Mobile-Beefluid](https://github.com/BeeFluid/Mobile-Beefluid) | Vide : l'application mobile vit dans Windows-Beefluid |
+| BeeFluid | [Windows-Beefluid](https://github.com/BeeFluid/Windows-Beefluid) | Poste de bureau d'études (Tauri) et son noyau, que le terrain lit ; schéma Supabase `beefluid` |
+| BeeFluid | [Windows-Beefluid-releases](https://github.com/BeeFluid/Windows-Beefluid-releases) | Canal public de publication du poste (et des anciens APK `M.`) |
+| BeeFluid | [Mobile-Beefluid](https://github.com/BeeFluid/Mobile-Beefluid) | Application de terrain (Expo, EAS Build), schéma Supabase `beefluid` |
+| BeeFluid | [BeeOffice](https://github.com/BeeFluid/BeeOffice) | Gestion de l'entreprise : devis, factures, clients, tableau de bord (Expo, site), schéma Supabase `beeoffice` |
+| BeeFluid | [BeeHuman](https://github.com/BeeFluid/BeeHuman) | Administratif de l'artisan : fiches fluides, TVA réduite, suivi des déchets (en projet) |
 | Lorderis | [Account-LordEris](https://github.com/LordEris/Account-LordEris) | Compte Lorderis unique : SQL du projet Supabase commun, account.lorderis.dev, code client de référence |
-| Lorderis | [Patrimo](https://github.com/LordEris/capsa) | Gestion de patrimoine (ex-Capsa) : web, schéma Supabase `patrimo` |
-| Lorderis | [HealthChecks](https://github.com/LordEris/HealthChecks) | Santé et suivi personnel (ex-Alfred), données chiffrées sur l'appareil : web, Electron, Android |
-| Lorderis | [Lineup](https://github.com/LordEris/Lineup) | Playlists de groupe (Next.js), schéma Supabase `lineup` |
+| Lorderis | [Patrimo](https://github.com/LordEris/capsa) | Gestion de patrimoine (ex-Capsa) : appli Expo et site, schéma Supabase `patrimo` |
+| Lorderis | [HealthChecks](https://github.com/LordEris/HealthChecks) | Santé et suivi personnel (ex-Alfred), données chiffrées sur l'appareil : appli Expo et site |
+| Lorderis | [Lineup](https://github.com/LordEris/Lineup) | Playlists de groupe (Expo et site), schéma Supabase `lineup` |
 | Lorderis | [Fleetly](https://github.com/LordEris/Fleetly) | Gestion de garage et de flotte (Expo), schéma Supabase `fleetly` |
 | Lorderis | [Website-Kikiladi](https://github.com/LordEris/Website-Kikiladi) | Jeu « Kikiladi ? » (statique + PHP) |
+| Lorderis | [Technique-TP](https://github.com/LordEris/technique-tp) | Pointage des rotations de camions sur les chantiers de TP (Expo) |
+| Lorderis | [Schedules](https://github.com/LordEris/Schedules) | Heures de travail, jour par jour, et lecture des feuilles d'heures (Expo), schéma Supabase `schedules` |
+| Lorderis | [Jobbly](https://github.com/LordEris/Jobbly) | Offres d'emploi de cinq sites en une liste, sans doublons ni liens morts (site statique), schéma Supabase `jobbly` |
 | Lorderis | [Website-LordEris](https://github.com/LordEris/Website-LordEris) | Site vitrine Lorderis et pages des projets |
+| Lorderis | [Workflows](https://github.com/LordEris/workflows) | Workflows GitHub réutilisables et modèle commun des dépôts : déploiement SFTP, vérifications Expo, fichiers communs |
+| Skill Up | [Quiz](https://github.com/Skill-Up-Education/quiz) | Skill Up Quiz : questionnaires en classe (site statique), schéma Supabase `skillupeducation` |
 
 ## Licence
 

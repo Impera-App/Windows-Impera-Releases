@@ -1,8 +1,11 @@
 # Notes pour les agents
 
 Les deux premières sections sont **communes à tous les dépôts** et identiques
-partout : les modifier, c'est les modifier dans chaque dépôt. Ce qui est propre à
-ce dépôt commence à « Ce dépôt ».
+partout : les modifier, c'est les modifier dans chaque dépôt. Leur source est le
+dossier `common/` de [Workflows](https://github.com/LordEris/workflows), avec les
+autres fichiers communs ; `scripts/sync-common.py` y vérifie un dépôt et le remet
+à jour ([docs/modele-commun.md](https://github.com/LordEris/workflows/blob/main/docs/modele-commun.md)).
+Ce qui est propre à ce dépôt commence à « Ce dépôt ».
 
 ## Organisation commune
 
@@ -67,8 +70,8 @@ celui du projet Supabase commun, dont le dépôt de référence est
 [Account-LordEris](https://github.com/LordEris/Account-LordEris) : même
 e-mail, même mot de passe, même compte Google partout, gérés sur
 `account.lorderis.dev`. Une app ne crée jamais son propre système de comptes.
-Les textes de connexion, d'inscription et de suppression, et la ligne « Un
-projet Lorderis » en bas de page sont communs, au mot près.
+Les textes de connexion, d'inscription et de suppression, et le pied de page
+LordEris (celui de lorderis.dev) en bas de page sont communs, au mot près.
 
 **Livrer** : une branche, une pull request, jamais de poussée directe sur la
 branche par défaut. Avant d'ajouter à l'index, relire `git status` : un
