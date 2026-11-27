@@ -70,8 +70,10 @@ celui du projet Supabase commun, dont le dépôt de référence est
 [Account-LordEris](https://github.com/LordEris/Account-LordEris) : même
 e-mail, même mot de passe, même compte Google partout, gérés sur
 `account.lorderis.dev`. Une app ne crée jamais son propre système de comptes.
-Les textes de connexion, d'inscription et de suppression, et le pied de page
-LordEris (celui de lorderis.dev) en bas de page sont communs, au mot près.
+Les textes de connexion, d'inscription et de suppression sont communs, au mot
+près ; le pied de page LordEris (celui de lorderis.dev) va en bas des pages de
+site (présentations, pages légales, sites), jamais dans une appli, même ouverte
+dans un navigateur.
 
 **Livrer** : une branche, une pull request, jamais de poussée directe sur la
 branche par défaut. Avant d'ajouter à l'index, relire `git status` : un
